@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DCEDC1"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Fruits -->
+
+    <!-- Vegetables -->
+
+    <!-- Protein -->
+
+    <!-- Whole Grains -->
+
+    <!-- Evaluate Button -->
+
+    <!-- Tip Output -->
+
+    <!-- Emoji Health Status -->
+
+
+    <ImageView
+        android:id="@+id/imgGrains"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/image_unselected_bg"
+        android:contentDescription="Whole Grains"
+        android:padding="8dp"
+        android:src="@drawable/grains"
+        app:layout_constraintStart_toEndOf="@id/imgProtein"
+        app:layout_constraintTop_toBottomOf="@+id/imgVeggies" />
+
+    <ImageView
+        android:id="@+id/imgProtein"
+        android:layout_width="86dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/image_unselected_bg"
+        android:contentDescription="Protien"
+        android:padding="8dp"
+        android:src="@drawable/protien"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgFruits"
+        app:layout_constraintVertical_bias="0.149" />
+
+    <ImageView
+        android:id="@+id/imgFruits"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/image_unselected_bg"
+        android:contentDescription="Fruits"
+        android:padding="8dp"
+        android:src="@drawable/fruits"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgVeggies"
+        android:layout_width="84dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="36dp"
+        android:background="@drawable/image_unselected_bg"
+        android:contentDescription="Vegetables"
+        android:padding="8dp"
+        android:src="@drawable/vegetables"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toEndOf="@id/imgFruits"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.195" />
+
+    <Button
+        android:id="@+id/btnCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:text="Evaluate My Day"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgFruits" />
+
+    <!-- Rotating Wellness Tip -->
+    <TextView
+        android:id="@+id/emojiStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:text="🙂"
+        android:textSize="64sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCheck" />
+
+    <TextView
+        android:id="@+id/rotatingTip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:text="Tip of the moment appears here..."
+        android:textAlignment="center"
+        android:textColor="#070707"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/emojiStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
