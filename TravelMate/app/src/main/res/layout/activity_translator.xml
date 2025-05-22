@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BA0C8D"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="App Logo"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/translateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="136dp"
+        android:text="Translator"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerSource"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toStartOf="@id/spinnerTarget"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/translateTitle" />
+
+    <ImageButton
+        android:id="@+id/btnSwap"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginVertical="8dp"
+        android:background="@null"
+        android:contentDescription="Swap"
+        android:src="@drawable/ic_swap"
+        app:layout_constraintBottom_toTopOf="@id/cardOutput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardInput" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardOutput"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSwap">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/langOutput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Translated text"
+                android:textColor="#888888"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtOutput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/langOutput"
+                android:layout_marginTop="8dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakOutput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:background="@null"
+                android:contentDescription="Speak"
+                android:src="@drawable/ic_mic" />
+
+            <ImageButton
+                android:id="@+id/btnPlayOutput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:background="@null"
+                android:contentDescription="Play"
+                android:src="@drawable/ic_speaker" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Spinner
+        android:id="@+id/spinnerTarget"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/spinnerSource"
+        app:layout_constraintTop_toBottomOf="@id/translateTitle" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardInput"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="56dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/translateTitle">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/langInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="English (US)"
+                android:textColor="#888888"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/langInput"
+                android:layout_marginTop="8dp"
+                android:background="@null"
+                android:hint="Enter text"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/btnSpeakInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:background="@null"
+                android:contentDescription="Speak"
+                android:src="@drawable/ic_mic" />
+
+            <ImageButton
+                android:id="@+id/btnPlayInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:background="@null"
+                android:contentDescription="Play"
+                android:src="@drawable/ic_speaker" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Swap Button -->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
